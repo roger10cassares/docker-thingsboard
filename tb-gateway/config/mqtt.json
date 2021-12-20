@@ -1,0 +1,57 @@
+{
+  "broker": {
+      "name":"IMT Network Server",
+      "host":"networkserver.maua.br",
+      "port":1883,
+      "security": {
+      "type": "basic",
+      "username": "PUBLIC",
+      "password": "public"
+      }
+  },
+  "mapping": [
+      {
+      "topicFilter": "application/+/node/+/rx",
+      "converter": {
+          "type": "json",
+          "deviceNameJsonExpression": "${devEUI}",
+          "deviceTypeJsonExpression": "${nodeName}",
+          "timeout": 60000,
+          "attributes": [
+          {
+              "type": "string",
+              "key": "model",
+              "value": "${nodeName}"
+          }
+          ],
+          "timeseries": [
+          {
+              "type": "double",
+              "key": "data",
+              "value": "${data}"
+          }
+          ]
+      }
+      }
+  ],
+  "connectRequests": [
+      {
+      "topicFilter": "sensor/connect",
+      "deviceNameJsonExpression": "${devEUI}"
+      }
+  ],
+  "disconnectRequests": [
+      {
+      "topicFilter": "sensor/disconnect",
+      "deviceNameJsonExpression": "${devEUI}"
+      }
+  ],
+  "attributeUpdates": [
+      {
+      "deviceNameFilter": "SmartMeter.*",
+      "attributeFilter": "uploadFrequency",
+      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+      }
+  ]
+}

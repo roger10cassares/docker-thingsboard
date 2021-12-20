@@ -1,0 +1,4 @@
+thingsboard/data
+thingsboard/logs
+
+tb-gateway/logs

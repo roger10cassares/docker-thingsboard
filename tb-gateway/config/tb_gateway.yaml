@@ -1,0 +1,47 @@
+thingsboard:
+  host: 10.33.133.132
+  port: 1883
+  security:
+    accessToken: tWquzSLFDoda1CKJ2pub
+storage:
+  type: file
+  data_folder_path: ./data/
+  max_file_count: 5
+  read_records_count: 6
+  max_records_count: 14
+connectors:
+  -
+    name: MQTT Broker Connector
+    type: mqtt
+    configuration: mqtt.json
+
+  -
+    name: Modbus Connector
+    type: modbus
+    configuration: modbus.json
+
+  -
+    name: Modbus Connector
+    type: modbus
+    configuration: modbus_serial.json
+
+  -
+    name: OPC-UA Connector
+    type: opcua
+    configuration: opcua.json
+
+  -
+    name: BLE Connector
+    type: ble
+    configuration: ble.json
+
+  -
+    name: CAN Connector
+    type: can
+    configuration: can.json
+
+  -
+    name: Custom Serial Connector
+    type: serial
+    configuration: custom_serial.json
+    class: CustomSerialConnector
