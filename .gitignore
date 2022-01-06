@@ -1,4 +1,4 @@
-thingsboard/data
-thingsboard/logs
+thingsboard/data/*
+thingsboard/logs/*
 
-tb-gateway/logs
+tb-gateway/logs/*
