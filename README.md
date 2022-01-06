@@ -2,8 +2,8 @@
 
 From this top level directory:
 ```bash
-sudo chown -R 799:799 ./thingsboard/data
-sudo chown -R 799:799 ./thingsboard/logs
+mkdir -p ./thingsboard/data && sudo chown -R 799:799 ./thingsboard/data
+mkdir -p ./thingsboard/logs && sudo chown -R 799:799 ./thingsboard/logs
 ```
 
 Build the docker images:
