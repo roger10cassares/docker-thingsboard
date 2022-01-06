@@ -1,5 +1,5 @@
 thingsboard:
-  host: 10.33.133.132
+  host: thingsboard
   port: 1885
   remoteShell: false
   remoteConfiguration: false
