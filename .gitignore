@@ -1,4 +1,16 @@
-thingsboard/data/*
-thingsboard/logs/*
+tb-gateway/config/*
+!tb-gateway/config/README.md
+
+tb-gateway/extensions/*
+!tb-gateway/extensions/README.md
 
 tb-gateway/logs/*
+!tb-gateway/logs/README.md
+
+
+thingsboard/data/*
+!thingsboard/data/README.md
+
+!thingsboard/logs/*
+!thingsboard/logs/README.md
+
