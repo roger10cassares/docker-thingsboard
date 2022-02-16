@@ -1,12 +1,13 @@
 FROM thingsboard/tb-postgres:3.3.2
 
-#MAINTAINER roger10cassares <roger10cassares@gmail.com>
-# USER root
+LABEL  roger10cassares <roger10cassares@gmail.com>
 
-# RUN apt-get update \
-#     && apt-get install tzdata
+USER root
 
-# ENV TZ=America/Sao_Paulo
+RUN apt-get update \
+    && apt-get install tzdata
 
-# USER 799
+ENV TZ=America/Sao_Paulo
+
+USER 799
 
